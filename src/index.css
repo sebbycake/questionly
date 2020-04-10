@@ -65,9 +65,9 @@ animation: typewriter 1.0s steps(44) 0.1s normal both,
   responsive css code
 */
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 400px) {
   .header-text {
-    font-size: 210%;  
+    font-size: 180%;  
   }
 
   @keyframes typewriter {
@@ -75,8 +75,20 @@ animation: typewriter 1.0s steps(44) 0.1s normal both,
     to {width: 6em;}
   }
 
+}
+
+@media only screen and (max-width: 500px) {
+  .header-text {
+    font-size: 200%;  
+  }
+
+  @keyframes typewriter {
+    from {width: 0;}
+    to {width: 6em;}
+  }
 
 }
+
 
 
 
@@ -103,6 +115,13 @@ new glow button
   .glow-btn {
     width: 200px;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .glow-btn {
+    width: 220px;
+    font-size: 1.5rem;
   }
 }
 

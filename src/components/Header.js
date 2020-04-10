@@ -2,10 +2,9 @@ import React from "react";
 
 function Header() {
     return (
-
         
-        <div className="header-text typewriter">
-                <header>
+        <div className="text-center">
+                <header className="header-text typewriter">
                     Questionly
                 </header>
         </div>
