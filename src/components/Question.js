@@ -29,12 +29,11 @@ class Question extends Component {
     render() {
         return (
 
-            <div>
-                <p style={{ color: randomColor() }} className="text-center question">{this.state.question}</p>
-                <p className="text-center">
-                    {/* <button className="btn btn-outline-light btn-lg btn-block" onClick={this.generateQuestion}>Generate</button> */}
-                    <button className="glow-btn" onClick={this.generateQuestion}>Generate</button>
-                </p>
+            <div className="text-center">
+                <p style={{ color: randomColor() }} className="question">{this.state.question}</p>
+                {/* <button className="btn btn-outline-light btn-lg btn-block" onClick={this.generateQuestion}>Generate</button> */}
+                <button className="glow-btn" onClick={this.generateQuestion}>Generate</button>
+               
             </div>
         )
     } // end of render()
