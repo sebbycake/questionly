@@ -215,7 +215,6 @@ const questionsData = [
     "Would you rather be kind or loyal",
     "Would you rather be caught cheating or catch me cheating?",
     "Would you rather know it all or have it all?",
-    ""
 ]
 
 
