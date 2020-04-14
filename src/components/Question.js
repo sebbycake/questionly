@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import questionsData from "./questionsList";
 import randomColor from "randomcolor";
-import shuffleArray from "./shuffle";
+import shuffleArray from "./Shuffle";
 
 class Question extends Component {
 
@@ -23,19 +23,18 @@ class Question extends Component {
         this.setState({
             question: randomQn
         })
-    }
+    } // end of generateQuestion()
 
 
     render() {
-        return (
 
+        return (
             <div className="text-center">
                 <p style={{ color: randomColor() }} className="question">{this.state.question}</p>
-                {/* <button className="btn btn-outline-light btn-lg btn-block" onClick={this.generateQuestion}>Generate</button> */}
                 <button className="glow-btn" onClick={this.generateQuestion}>Generate</button>
-               
             </div>
-        )
+        ) // end of return()
+
     } // end of render()
 
 } // end of class

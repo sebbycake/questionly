@@ -6,7 +6,6 @@ import Question from "./Question";
 function App() {
     return (
         <div>
-           
             <Header />
             <Question />
             <Footer />
