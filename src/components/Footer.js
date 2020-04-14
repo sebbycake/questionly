@@ -2,8 +2,10 @@ import React from "react";
 
 function Footer() {
     return (
-        <div className="fixed-bottom">
-            <footer>&copy; Questionly 2020. All Rights Reserved.</footer>
+        <div className="footer-container">
+            <div className="about"></div>
+            <div className="copyright">&copy; Questionly 2020</div>
+            <div className="contact"></div>
         </div>
     )
 }

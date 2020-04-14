@@ -3,10 +3,8 @@ import React from "react";
 function Header() {
     return (
         
-        <div className="text-center">
-                <header className="header-text typewriter">
-                    Questionly
-                </header>
+        <div className="header typewriter">
+            <h1>Questionly</h1>
         </div>
 
     )

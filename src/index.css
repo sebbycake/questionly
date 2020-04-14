@@ -1,127 +1,96 @@
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
-/* Global */
-html{
-  min-height: 100%;
-  overflow: hidden;
-}
-
 body {
-  height: calc(100vh - 8em);
-  padding: 6em;
-  display: flex; 
-  justify-content: center;
-  /* align-items: center; causes header to keep adjusting*/
   color: rgba(255,255,255,.75);
-  font-family: 'Anonymous Pro', monospace, Arial, Helvetica, sans-serif;  
-  background-color: rgb(25,25,25);  
+  font-family: 'Anonymous Pro', monospace, sans-serif;  
+  background-color: rgb(25,25,25);
+  /* solves footer background color full width*/
+  margin: auto;  
 }
 
+/* ------------------------- */
 
-.question {
-  font-size: 350%;
-}
+/* header/logo title */
 
-.fixed-bottom {
+.header {
+  padding: 10px 20px;
   text-align: center;
-  font-size: 10px;
-}
-
-/* 
-  typewriter effect
-*/
-.header-text {
-  position: relative;
-  top: 50%;  
-  width: 24em;
-  margin: 0 auto;
-  border-right: 2px solid rgba(255,255,255,.75);
-  text-align: center;
-  font-size: 600%;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
   color: white;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 20px;
+  border-right: 2px solid rgba(255,255,255,.75);
+  margin: 0 auto;
 }
+
 
 /* Animation */
 .typewriter{
-animation: typewriter 1.0s steps(44) 0.1s normal both,
-           cursor 700ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-  from {width: 0;}
-  to {width: 6em;}
-}
-@keyframes cursor {
-  from {border-right-color: rgba(255,255,255,.75);}
-  to {border-right-color: transparent;}
-}
-
-
-
-/* -------------------------------------  */
-
-/* 
-  responsive css code
-*/
-
-@media only screen and (max-width: 400px) {
-
+  animation: typewriter 1.0s steps(44) 0.1s normal both,
+             cursor 700ms steps(44) infinite normal;
+  }
+  @keyframes typewriter{
+    from {width: 0;}
+    to {width: 11em;}
+  }
+  @keyframes cursor {
+    from {border-right-color: rgba(255,255,255,.75);}
+    to {border-right-color: transparent;}
+  }
   
 
-  .header-text {
-    display: block;
-    
-  }
+@media (min-width:468px) {
+    .container {
+      display: flex;
+    }
 
-  .question {
-    font-size: 170%;
-   
-  }
+    .header {
+      font-size: 40px;
+    }
 
-  @keyframes typewriter {
-    from {width: 0;}
-    to {width: 6em;}
-  }
+    .players-box {
+      border-right: 2px solid #F8F8FF;
+    }
 
 }
 
-@media only screen and (max-width: 500px) {
+/* ------------------------- */
 
-  body {
-    display: flex
-  }
+/* .container div {
+  border: 1px #ccc solid;
+  padding: 10px;
+} */
 
-  .header-text {
-    font-size: 300%;  
-  }
+.player {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  background-color:#FFE4E1;
+  margin: 5px;
+  color: black;
+  border-radius: 10px;
+}
 
-  .question {
-    font-size: 200%;
-  }
+.players-box {
+  flex: 2;
+  text-align: center;
+  font-size: 30px;
+}
 
-  @keyframes typewriter {
-    from {width: 0;}
-    to {width: 6em;}
-  }
-
+.question-box {
+  flex: 3;
+  text-align: center;
+  font-size: 50px;
 }
 
 
 
 
-
-/* -------------------------------------  */
-
-
-/* 
-new glow button
-*/
+/* generate button */
 
 .glow-btn {
-  width: 420px;
+  width: 200px;
   height: 60px;
   border: none;
   outline: none;
@@ -135,19 +104,6 @@ new glow button
   margin: 10px;
 }
 
-@media (max-width: 400px) {
-  .glow-btn {
-    width: 200px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .glow-btn {
-    width: 220px;
-    font-size: 1.5rem;
-  }
-}
 
 .glow-btn:before {
   content: '';
@@ -199,3 +155,74 @@ new glow button
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+
+
+/* ------------------------- */
+
+
+/* list of players input */
+
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 60%;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 10px;
+  transition: width 0.4s ease-in-out;
+  outline: none;
+  
+}
+
+input[type=text]:focus {
+  width: 80%;
+  border: 3px solid #8842d5; 
+}
+
+
+
+/* ------------------------- */
+
+/* footer */
+
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  display: flex;
+  /* background-color:#D3D3D3; */
+  padding: 4px;
+}
+
+.about {
+  flex:3;
+}
+
+.copyright {
+  flex:3;
+}
+
+.contact {
+  flex: 3;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+
+
+/* ------------------------- */
