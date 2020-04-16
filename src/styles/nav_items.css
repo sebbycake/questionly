@@ -1,0 +1,36 @@
+@media (min-width:468px) {
+    .nav-container {
+        display: flex;
+        padding: 0px 5px;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+
+    .about-us, .contact-us {
+        font-size: 30px;
+        border-right: 5px solid #fff44f;
+    }
+
+    .about-content, .contact-content {
+        width: 50%;
+        margin: 40px;
+    }
+
+}
+
+@media (max-width:468px) {
+    .about-content, .contact-content {
+        margin: 30px;
+    }
+}
+
+.about-us, .contact-us {
+    flex:2;
+    text-align: center;
+}
+
+.about-content, .contact-content {
+    flex: 4;
+    text-align: center;
+}

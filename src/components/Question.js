@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import questionsData from "./questionsList";
+import questionsData from "../util/questionsList";
 import randomColor from "randomcolor";
-import shuffleArray from "./Shuffle";
+import shuffleArray from "../util/Shuffle";
+import Player from './Player';
 
 class Question extends Component {
 
@@ -13,7 +14,6 @@ class Question extends Component {
             questionList: questionsData,
             playerName: "",
             playersList: [],
-            addPlayers: false,
         }
         this.generateQuestion = this.generateQuestion.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -22,7 +22,6 @@ class Question extends Component {
     } // end of constructor
 
     generateQuestion() {
-
         // select random qn
         shuffleArray(this.state.questionList)
         const questionListLength = this.state.questionList.length
@@ -42,6 +41,7 @@ class Question extends Component {
         })
     } // end of generateQuestion()
 
+
     handleChange(event) {
         const { name, value } = event.target
         this.setState({
@@ -49,7 +49,6 @@ class Question extends Component {
         })
 
     } // end of handleChange()
-
 
 
     handleSubmit(event) {
@@ -87,13 +86,12 @@ class Question extends Component {
 
 
     render() {
-
-      
+    
         const playersArray = this.state.playersList.map(player =>
-            <div className="player" >{player}</div>
+            // render Player component for each player
+            <Player name={player} />
         )
 
-        // const playerToAns = this.state.playerToAns !== "None" ? `Player: ${this.state.playerToAns}` : ""    
         const playerToAns = this.state.playerToAns !== "None" && `Player: ${this.state.playerToAns}`    
 
         return (
@@ -119,6 +117,7 @@ class Question extends Component {
                     <p>{playerToAns}</p>
                     <p style={{ color: randomColor() }}>{this.state.question}</p>
                     <button className="glow-btn" onClick={this.generateQuestion}>Generate</button>
+                    
                 </div>
 
             </div>  // end of container class
