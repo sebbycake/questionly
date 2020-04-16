@@ -57,7 +57,7 @@ const questionsData = [
     "Have you ever accidentally revealed a friends' secret?",
     "What is the worst date you’ve ever been on?",
     "Name the most immature person in this room.",
-    "When was the last time you watched an “adult movie? What was it?",
+    "When was the last time you watched an adult movie? What was it?",
     "Would you marry someone for their money?",
     "Name the most gullible person in this room.",
     "Have you ever compromised your morals for money?",
@@ -139,7 +139,7 @@ const questionsData = [
     "Do you masturbate to your female friends' photos?",
     "What do you like to do when you are alone?",
     "Doggy style or missionary position?",
-    "Have you masturbated to local Instagram influencers?",
+    "Have you ever masturbated to local Instagram influencers?",
     "What is your favourite sex position?",
     "Which person's sister in this room would you hook up with?",
     "What is your favourite sex position?",
@@ -261,7 +261,8 @@ const questionsData = [
     "Have you ever used a dildo?",
     "When was the last time you fingered yourself?",
     "Have you ever had a paranormal experience?",
-    
+    "Which local Instagram influencer have you fantasised before?",
+    "When was the last time you shaved your pubes?",
 ]
 
 

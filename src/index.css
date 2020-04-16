@@ -14,7 +14,7 @@ body {
 /* header/logo title */
 
 .header {
-  padding: 10px 20px;
+  padding: 5px;
   text-align: center;
   color: white;
   overflow: hidden;
@@ -50,7 +50,7 @@ body {
     }
 
     .players-box {
-      border-right: 2px solid #F8F8FF;
+      border-right: 1px solid #A9A9A9; /*#f8f8ff*/
       font-size: 20px;
     }
 
@@ -76,11 +76,12 @@ body {
 } */
 
 .player {
-  display: flex;
-  flex-direction: column;
+
   padding: 4px;
+  width: 45%;
   background-color:#FFE4E1;
-  margin: 5px;
+  margin: auto;
+  margin-bottom: 5px;
   color: black;
   border-radius: 10px;
 }
@@ -94,9 +95,8 @@ body {
 .question-box {
   flex: 3;
   text-align: center;
+  margin: 0px 20px;
 }
-
-
 
 
 /* generate button */
@@ -176,19 +176,17 @@ body {
 /* list of players input */
 
 input[type=text] {
-  width: 130px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 10px;
   font-size: 16px;
-  width: 60%;
+  width: 50%;
   background-color: white;
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 10px;
   transition: width 0.4s ease-in-out;
   outline: none;
-  
 }
 
 input[type=text]:focus {
