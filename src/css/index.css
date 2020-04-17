@@ -153,3 +153,11 @@ a:visited {
 
 
 /* ------------------------- */
+
+.not-found-page {
+  text-align: center;
+}
+
+.not-found-page h1 {
+  font-size: 40px;
+}

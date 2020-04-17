@@ -4,6 +4,7 @@ import Contact from "./Contact";
 import Header from "./Header";
 import Footer from "./Footer";
 import Question from "./Question";
+import NotFound from "./NotFound";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
                         <Route path="/" exact component={Question}/>
                         <Route path="/about" exact component={About}/>
                         <Route path="/contact" exact component={Contact}/>
+                        <Route path="/" component={NotFound} />
                     </Switch>
-                    {/* <Question /> */}
+                   
                 <Footer />
             </div>
         </Router>
