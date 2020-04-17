@@ -132,28 +132,14 @@ input[type=text]:focus {
 
 /* footer */
 
-.footer-container {
+.footer {
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
   color: white;
-  text-align: center;
   font-size: 10px;
-  display: flex;
-  /* background-color:#D3D3D3; */
-  padding: 4px;
-}
-
-.about {
-  flex:3;
-}
-
-.copyright {
-  flex:3;
-}
-
-.contact {
-  flex: 3;
+  text-align: center;
 }
 
 a:link {
