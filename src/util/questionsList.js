@@ -246,7 +246,7 @@ const questionsData = [
     "Do you pick your nose when you’re alone?",
     "If someone offered you $1 million dollars to break up with your S/O, would you do it?",
     "Have you ever been caught checking someone out?",
-    "What was the last rate-R movie you watched?",
+    "What was the last R-rated movie you watched?",
     "Which part of your body are you ticklish?",
     "Where is the craziest place you have ever had sex?",
     "Have you ever won an award you didn’t deserve?",
