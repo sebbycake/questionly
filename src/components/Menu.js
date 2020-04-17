@@ -11,10 +11,13 @@ function Menu() {
         textTransform: "uppercase",
         margin: "1.5rem",
         transition: ".3s",
-        fontSize: "2.5rem",
-        display: "block"
+        fontSize: "2rem",
+        display: "block",
     }
     
+    // pseudocode:
+    // onclick, menu > div's visiblity = hidden. 
+
     return (
         <div className="menu-wrap">
             <input type="checkbox" className="toggler" />
