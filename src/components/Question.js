@@ -10,37 +10,41 @@ class Question extends Component {
         super()
         this.state = {
             question: "Generate question below!",
-            playerToAns: "None",
+            playerToAns: undefined,
             questionList: questionsData,
             playerName: "",
             playersList: [],
         }
-        this.generateQuestion = this.generateQuestion.bind(this)
+        this.generateQuestionPlayer = this.generateQuestionPlayer.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         
     } // end of constructor
 
-    generateQuestion() {
-        // select random qn
-        shuffleArray(this.state.questionList)
-        const questionListLength = this.state.questionList.length
-        let randomInt = Math.floor(Math.random() * questionListLength)
-        let randomQn = this.state.questionList[randomInt]
 
-        // choose random player to ans qn
-        const playerListLength = this.state.playersList.length
-        let randomPlayer = this.state.playerToAns
-        if (playerListLength !== 0) {
-            let randomPlayerInt = Math.floor(Math.random() * playerListLength)
-            randomPlayer = this.state.playersList[randomPlayerInt]
+    // helper method to generate random object
+    generateRandom(array) {
+        const arrayLength = array.length
+        let randomInt = null
+        // if the array is not empty
+        if (arrayLength > 0 ) {
+            randomInt = Math.floor(Math.random() * arrayLength)
         }
+        let randomObj = array[randomInt]
+        return randomObj
+    } // end of generateRandom()
+
+    generateQuestionPlayer() {
+        // select random qn
+        let randomQn = this.generateRandom(shuffleArray(this.state.questionList))
+        // select random player
+        let randomPlayer = this.generateRandom(this.state.playersList)
+        // update state
         this.setState({
             question: randomQn,
             playerToAns: randomPlayer,
         })
     } // end of generateQuestion()
-
 
     handleChange(event) {
         const { name, value } = event.target
@@ -49,7 +53,6 @@ class Question extends Component {
         })
 
     } // end of handleChange()
-
 
     handleSubmit(event) {
         event.preventDefault()
@@ -83,8 +86,6 @@ class Question extends Component {
     } // end of handleSubmit()
 
 
-
-
     render() {
     
         const playersArray = this.state.playersList.map(player =>
@@ -92,7 +93,7 @@ class Question extends Component {
             <Player name={player} />
         )
 
-        const playerToAns = this.state.playerToAns !== "None" && `Player: ${this.state.playerToAns}`    
+        const playerToAns = this.state.playerToAns !== undefined && `Player: ${this.state.playerToAns}`    
 
         return (
 
@@ -112,11 +113,10 @@ class Question extends Component {
                     </form>
                 </div> 
 
-
                 <div className="question-box">
                     <p>{playerToAns}</p>
                     <p style={{ color: randomColor() }}>{this.state.question}</p>
-                    <button className="glow-btn" onClick={this.generateQuestion}>Generate</button>
+                    <button className="glow-btn" onClick={this.generateQuestionPlayer}>Generate</button>
                     
                 </div>
 
