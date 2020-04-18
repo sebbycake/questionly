@@ -16,7 +16,7 @@ function Menu() {
     }
     
     // pseudocode:
-    // onclick, menu > div's visiblity = hidden. 
+    // onclick, menu's display to none.
 
     return (
         <div className="menu-wrap">
