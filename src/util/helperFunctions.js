@@ -1,6 +1,5 @@
-
 // O(n) shuffling algorithm
-function shuffleArray(arr) {
+export function shuffleArray(arr) {
     var currentIndex = arr.length, tempVal, randomIndex;
   
     // While there remain elements to shuffle...
@@ -17,6 +16,19 @@ function shuffleArray(arr) {
     }
   
     return arr;
-}
+}  // end of shuffleArray()
 
-export default shuffleArray
+
+// helper method to generate random object
+export function generateRandom(array) {
+  const arrayLength = array.length
+  let randomInt = null
+  // if the array is not empty
+  if (arrayLength > 0 ) {
+      randomInt = Math.floor(Math.random() * arrayLength)
+  }
+  let randomObj = array[randomInt]
+
+  return randomObj
+} // end of generateRandom()
+

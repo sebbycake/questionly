@@ -88,6 +88,18 @@ body {
   border-radius: 10px;
 }
 
+/* 
+.playerToAns {
+  display: block;
+  border-right: 3px dashed #fff44f;
+  border-bottom: 3px dashed #fff44f; 
+  color: #fff;
+  padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+} */
+
+
 .players-box {
   flex: 2;
   text-align: center;
