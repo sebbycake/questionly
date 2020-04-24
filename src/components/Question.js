@@ -15,12 +15,16 @@ function Question() {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (playerName.trim()) {
-            if (!playersList.includes(playerName.trim())) {
-                playersList.push(playerName.trim())
-                setPlayerName("")
-            } // inner if 
-            else {
-                alert(`${playerName.trim()} is already in the list!`)
+            if (playerName.length <= 19 ) {
+                if (!playersList.includes(playerName.trim())) {
+                    playersList.push(playerName.trim())
+                    setPlayerName("")
+                } // inner if 
+                else {
+                    alert(`${playerName.trim()} is already in the list!`)
+                }
+            } else {
+                alert("Player's name is too long!")
             }
         } else {
             alert("Player's name cannot be empty!")
@@ -57,7 +61,7 @@ function Question() {
     return (
         <div className="container">
             <div className="players-box">
-                <h4 style={{ color: "#F0FFF0" }}>Players</h4>
+                <h4 style={{ color: "#F0FFF0" }}>{playersList.length > 1 && playersList.length} Players</h4>
                 <PlayerList playersList={playersList} />
                 <form onSubmit={handleSubmit}>
                     <input
