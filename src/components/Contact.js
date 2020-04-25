@@ -10,7 +10,7 @@ function Contact() {
                 <div className="contact-content">
                     <h2>We are always getting better for you.</h2>
                     <p>Please fill in this <a href="https://forms.gle/GPmD6zPcd2cyK7vq7">form</a> to get in touch with us.</p>
-                    <p>Meanwhile, we thank you for your support in using Questionly.</p>
+                    {/* <p>Meanwhile, we thank you for your support in using Questionly.</p> */}
                 </div>
             </div>
         </div>
