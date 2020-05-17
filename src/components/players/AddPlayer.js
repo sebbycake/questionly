@@ -1,44 +1,44 @@
 import React, { useState } from "react";
 import PlayerList from "./PlayerList";
 
-function AddPlayer() {
-
-    const [player, setPlayer] = useState("")
-    
-    const [playersList, setPlayersList] = useState([])
+function AddPlayer(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (player.trim()) {
-            if (!playersList.includes(player.trim())) {
-                playersList.push(player)
-                setPlayer("")
-            } // inner if 
-            else {
-                alert(`${player} is already in the list!`)
+        if (props.playerName.trim()) {
+            if (props.playerName.length <= 19 ) {
+                if (!props.playersList.includes(props.playerName.trim())) {
+                    props.playersList.push(props.playerName.trim())
+                    props.setPlayerName("")
+                } // inner if 
+                else {
+                    alert(`${props.playerName.trim()} is already in the list!`)
+                }
+            } else {
+                alert("Player's name is too long!")
             }
         } else {
             alert("Player's name cannot be empty!")
         }
 
-        const updatedList = playersList
+        const updatedList = props.playersList
 
         return (
-            setPlayersList(updatedList)
+            props.setPlayersList(updatedList)
         )
-    }
+    } // end of handleSubmit()
 
 
     return (
 
         <div>
-            <PlayerList playersList={playersList} />
+            <PlayerList playersList={props.playersList} />
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    value={player}
+                    value={props.playerName}
                     placeholder="Enter player's name"
-                    onChange={(e) => setPlayer(e.target.value)}
+                    onChange={(e) => props.setPlayerName(e.target.value)}
                 />
             </form>
         </div>
