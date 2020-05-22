@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import questionsData from "../util/questionsList";
 import randomColor from "randomcolor";
 import { shuffleArray, generateRandom } from "../util/helperFunctions";
-import PlayerList from "./players/PlayerList";
 import AddPlayer from "./players/AddPlayer";
 
 function Question() {

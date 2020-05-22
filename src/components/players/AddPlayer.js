@@ -6,9 +6,15 @@ function AddPlayer(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (props.playerName.trim()) {
-            if (props.playerName.length <= 19 ) {
+            if (props.playerName.length <= 19) {
                 if (!props.playersList.includes(props.playerName.trim())) {
-                    props.playersList.push(props.playerName.trim())
+
+                    props.playersList.push(
+                        {
+                            id: Math.floor(Math.random() * 10000000000000000000000000000000),
+                            name: props.playerName.trim()
+                        }
+                    )
                     props.setPlayerName("")
                 } // inner if 
                 else {
@@ -29,10 +35,18 @@ function AddPlayer(props) {
     } // end of handleSubmit()
 
 
+    const removePlayer = (player_id) => {
+        const updatedPlayers = props.playersList.filter(
+            player => player.id !== player_id
+        )
+        return props.setPlayersList(updatedPlayers)
+    }
+
+
     return (
 
         <div>
-            <PlayerList playersList={props.playersList} />
+            <PlayerList playersList={props.playersList} removePlayerHandler={removePlayer}/>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

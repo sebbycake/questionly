@@ -26,9 +26,9 @@ export function generateRandom(array) {
   // if the array is not empty
   if (arrayLength > 0 ) {
       randomInt = Math.floor(Math.random() * arrayLength)
+      let randomObj = array[randomInt].name
+      return randomObj
   }
-  let randomObj = array[randomInt]
-
-  return randomObj
+ 
 } // end of generateRandom()
 
