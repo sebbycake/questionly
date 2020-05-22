@@ -3,11 +3,12 @@ import PlayerList from "./PlayerList";
 
 function AddPlayer(props) {
 
-    const handleSubmit = (event) => {
+    const addPlayer = (event) => {
         event.preventDefault();
         if (props.playerName.trim()) {
             if (props.playerName.length <= 19) {
-                if (!props.playersList.includes(props.playerName.trim())) {
+                // if player doesn't exists in the array
+                if (!props.playersList.find(player => player.name === props.playerName.trim())) {
 
                     props.playersList.push(
                         {
@@ -32,7 +33,7 @@ function AddPlayer(props) {
         return (
             props.setPlayersList(updatedList)
         )
-    } // end of handleSubmit()
+    } // end of addPlayer()
 
 
     const removePlayer = (player_id) => {
@@ -47,7 +48,7 @@ function AddPlayer(props) {
 
         <div>
             <PlayerList playersList={props.playersList} removePlayerHandler={removePlayer}/>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={addPlayer}>
                 <input
                     type="text"
                     value={props.playerName}
