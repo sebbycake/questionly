@@ -1,68 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Questionly
 
-## Available Scripts
+A social game question random generator.
 
-In the project directory, you can run:
 
-### `npm start`
+## About The Project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project idea is a solution to my past drinking sessions with my friends where we ran out of topics and questions to talk about. This can also happen during parties, college orientation, or any typical social gathering with your friends. Therefore, with this app, you can generate questions randomly, play with one another, and have something to chat about!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Question Types:
+1. Would You Rather
+2. Burning Bridges Style
+3. Who Is Most Likely
+4. Have You Ever
+5. This Or That
+6. Personal, Funny, Raunchy
+7. Others 
 
-### `npm test`
+### Built With
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [React](https://reactjs.org/) - Front-end web framework used
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+* [node.js and npm](https://nodejs.org/en/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Install dependencies on your local machine:
 
-## Learn More
+```
+git clone https://github.com/sebbycake/questionly.git
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Create a new JS file `questionsList.js`  and write your own questions in JSON format. Park it under `./src/util` directory.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copy the code below and add your own question name.
 
-### Code Splitting
+```
+const questionsData = [
+    {id: 1, name: "Question 1"},
+    {id: 2, name: "Question 2"},
+    .
+    .
+    .
+]
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+export default questionsData
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Usage
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Run the code on node server:
+```
+npm start
+```
 
-### Advanced Configuration
+## Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Deployment using `Heroku`:
 
-### Deployment
+Do remember to create an account on Heroku prior to deployment.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```
+cd questionly
+heroku create <your_project_name> --buildpack https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "Deploy to Heroku"
+git push heroku master
+```
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+
+This project is licensed under the MIT License.
