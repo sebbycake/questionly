@@ -19,6 +19,7 @@ Question Types:
 ### Built With
 
 * [React](https://reactjs.org/) - Front-end web framework used
+* [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) - Command used to create development environment for React project
 
 
 
@@ -39,7 +40,7 @@ git clone https://github.com/sebbycake/questionly.git
 npm install
 ```
 
-2. Create a new JS file `questionsList.js`  and write your own questions in JSON format. Park it under `./src/util` directory.
+2. Create or edit a new JS file `questionsList.js`  and write your own questions in JSON format. Park it under `./src/util` directory.
 
 Copy the code below and add your own question name.
 
@@ -66,12 +67,11 @@ npm start
 
 ## Deployment
 
-Deployment using `Heroku`:
-
-Do remember to create an account on Heroku prior to deployment.
+Follow the steps below to deploy React app on `Heroku`:
 
 ```
-cd questionly
+cd <react_project_directory>
+git init .
 heroku create <your_project_name> --buildpack https://github.com/mars/create-react-app-buildpack.git
 git add .
 git commit -m "Deploy to Heroku"
