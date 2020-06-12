@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Contact Us Page
 function Contact() {
     return (
         <div>

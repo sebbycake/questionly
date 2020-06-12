@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import NavItem from "./NavItem";
 
 function Menu() {
     
     const [toggle, setToggle] = useState(false)
 
     const handleNavBar = () => {
-        toggle ? setToggle(false) : setToggle(true)
+        setToggle(!toggle)
         const navBar = document.querySelector('.nav-links');
         navBar.classList.toggle('nav-active');
     }
@@ -23,15 +23,9 @@ function Menu() {
             </div>
 
             <ul className="nav-links">
-               <li>
-                   <Link to='/' onClick={handleNavBar}>Home</Link>
-               </li>
-               <li>
-                   <Link to='/about' onClick={handleNavBar}>About Us</Link>
-               </li>
-               <li>
-                   <Link to='/contact' onClick={handleNavBar}>Contact Us</Link>
-               </li>
+               <NavItem path='/' handler={handleNavBar} page='Home' />
+               <NavItem path='/about' handler={handleNavBar} page='About Us' />
+               <NavItem path='/contact' handler={handleNavBar} page='Contact Us' />
             </ul>
         </nav>
 
