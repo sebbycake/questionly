@@ -42,7 +42,7 @@ function Question() {
             </div>
 
             <div className="question-box">
-                <p class={playerToAns !== undefined && "playerToAns"}>{playerAns}</p>
+                <p className={playerToAns !== undefined && "playerToAns"}>{playerAns}</p>
                 <p style={{ color: randomColor() }}>{question}</p>
                 <button className="glow-btn" onClick={generateQuestionPlayer}>Generate</button>
             </div>

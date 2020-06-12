@@ -1,47 +1,39 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Menu() {
-
-    const styles = {
-        listStyleType: "none",
-        textDecoration: "none",
-        color: "#fff",
-        fontWeight: 550,
-        textTransform: "uppercase",
-        margin: "1.5rem",
-        transition: ".3s",
-        fontSize: "2rem",
-        display: "block",
-    }
     
-    // pseudocode:
-    // onclick, menu's display to none.
+    const [toggle, setToggle] = useState(false)
+
+    const handleNavBar = () => {
+        toggle ? setToggle(false) : setToggle(true)
+        const navBar = document.querySelector('.nav-links');
+        navBar.classList.toggle('nav-active');
+    }
+
+    let isToggle = toggle ? 'toggle' : ''
 
     return (
-        <div className="menu-wrap">
-            <input type="checkbox" className="toggler" />
-            <div className="hamburger">
-                <div></div>
+
+        <nav>
+            <div className={`burger + ${isToggle}`} onClick={handleNavBar}>
+                <div className="line1"></div>
+                <div className="line2"></div>
+                <div className="line3"></div>
             </div>
-            <div className="menu">
-                <div>
-                    <div>
-                        <ul>
-                            <Link style={styles} to="/">
-                            <li>Home</li>
-                            </Link>
-                            <Link style={styles} to="/about" >
-                            <li>About Us</li>
-                            </Link>
-                            <Link style={styles} to="/contact">
-                            <li>Contact Us</li>
-                            </Link>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+            <ul className="nav-links">
+               <li>
+                   <Link to='/'>Home</Link>
+               </li>
+               <li>
+                   <Link to='/about'>About Us</Link>
+               </li>
+               <li>
+                   <Link to='/contact'>Contact Us</Link>
+               </li>
+            </ul>
+        </nav>
 
     )
 }
