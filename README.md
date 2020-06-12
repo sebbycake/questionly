@@ -67,7 +67,9 @@ npm start
 
 ## Deployment
 
-Follow the steps below to deploy React app on `Heroku`:
+Follow the steps below to deploy React app:
+
+1. Heroku
 
 ```
 cd <react_project_directory>
@@ -77,6 +79,40 @@ git add .
 git commit -m "Deploy to Heroku"
 git push heroku master
 ```
+
+2. Netlify
+
+
+```
+npm install -g netlify-cli
+cd <react_project_name>
+npm run build
+```
+
+
+
+If you've used React Router in your project,
+do the following:
+```
+touch build/_redirects
+```
+Add the following code to `_redirects` file:
+```
+/*    /index.html  200
+```
+
+Finally, to deploy, run:
+```
+netlify deploy
+```
+You will be prompted to provide a publish directory. Enter `build`, which is a production build of your React project.
+
+
+After viewing the draft URL given to you and everything is running smoothly, run:
+```
+netlify deploy --prod
+```
+
 
 
 ## License
