@@ -24,13 +24,13 @@ function Menu() {
 
             <ul className="nav-links">
                <li>
-                   <Link to='/'>Home</Link>
+                   <Link to='/' onClick={handleNavBar}>Home</Link>
                </li>
                <li>
-                   <Link to='/about'>About Us</Link>
+                   <Link to='/about' onClick={handleNavBar}>About Us</Link>
                </li>
                <li>
-                   <Link to='/contact'>Contact Us</Link>
+                   <Link to='/contact' onClick={handleNavBar}>Contact Us</Link>
                </li>
             </ul>
         </nav>
