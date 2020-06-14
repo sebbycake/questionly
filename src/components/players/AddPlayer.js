@@ -8,7 +8,8 @@ function AddPlayer(props) {
         if (props.playerName.trim()) {
             if (props.playerName.length <= 19) {
                 // if player doesn't exists in the array
-                if (!props.playersList.find(player => player.name === props.playerName.trim())) {
+                let playerName = props.playerName.trim().toLowerCase();
+                if (!props.playersList.find(player => player.name === playerName)) {
 
                     props.playersList.push(
                         {
